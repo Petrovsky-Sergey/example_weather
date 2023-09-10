@@ -31,13 +31,17 @@
             </form>
 
         </div>
-        <div class="col-4 offset-1 mt-5">
+        <div class="col-4 offset-1">
             <h1>Information</h1>
-            <div class="alert alert-danger">
-                <div class="alert alert-danger">
-                    <b>City:</b>{{ info.city }}<br>
-                    <b>Temp</b>{{ info.temp }}<sup>0</sup><br>
-                    <img src="https://openwethermap.org/img/w/{{}}.png" alt="icon_weather" class="img-thunbnail">
+            <div class="alert alert-info">
+                <div class="row">
+                    <div class="col-9">
+                        <b>City: </b>{{ info.city }}<br>
+                        <b>Temp: </b>{{ info.temp }}<sup>0</sup><br>
+                    </div>
+                    <div class="col-2 offset-1">
+                        <img src="https://openwethermap.org/img/wn/{{ info.icon }}.png" alt="icon_weather">
+                    </div>
                 </div>
             </div>
         </div>
