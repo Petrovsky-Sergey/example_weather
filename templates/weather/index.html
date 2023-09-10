@@ -59,11 +59,12 @@
 </script>
     <div class="row">
         <div class="col-5 offset-1">
-            {% csrf_tocken %}
+           
             <form action="" method="post">
+                {% csrf_token %}
                 <label for="city">Город</label><br>
-                {{ form.name }}
-                <input type="text" id="city" class="form-control" name="city" placeholder="Input City"><br>
+                {{ form.name }}<br>
+                <!--<input type="text" id="city" class="form-control" name="city" placeholder="Input City"><br>-->
                 <input type="submit" name="send" value="to know" class="mt-2 btn btn-danger">
             </form>
 
@@ -88,9 +89,7 @@
     </div>
 </div>
 <style>
-    body{
-        background-color: navajowhite;
-    }
+
     header{
         background-color: aquamarine;
     }
