@@ -29,8 +29,7 @@
 
 <script type="text/javascript">
     
-    /* функция добавления ведущих нулей */
-    /* (если число меньше десяти, перед числом добавляем ноль) */
+
     function zero_first_format(value)
     {
         if (value < 10)
@@ -40,7 +39,6 @@
         return value;
     }
 
-    /* функция получения текущей даты и времени */
     function date_time()
     {
         var current_datetime = new Date();
@@ -54,24 +52,20 @@
         return day+"."+month+"."+year+" "+hours+":"+minutes+":"+seconds;
     }
 
-    /* выводим текущую дату и время на сайт в блок с id "current_date_time_block" */
     document.getElementById('current_date_time_block').innerHTML = date_time();
 </script>
     <div class="row">
-        <div class="col-5 offset-1">
-           
+        <div class="col-5 offset-1">           
             <form action="" method="post">
                 {% csrf_token %}
                 <label for="city">Город</label><br>
                 {{ form.name }}<br>
-                <!--<input type="text" id="city" class="form-control" name="city" placeholder="Input City"><br>-->
                 <input type="submit" name="send" value="to know" class="mt-2 btn btn-danger">
             </form>
 
         </div>
         <div class="col-4 offset-1">
             <h1>Information</h1>
-
             {% for info in all_info  %}
             <div class="alert alert-info">
                 <div class="row">
@@ -80,7 +74,7 @@
                         <b>Temp: </b>{{ info.temp }}<sup>0</sup><br>
                     </div>
                     <div class="col-2 offset-1">
-                        <img src="https://openwethermap.org/img/wn/{{ info.icon }}.png" alt="icon_weather">
+                        <img src="https://openwethermap.org/img/w/{{ info.icon }}.png" alt="icon_weather">
                     </div>
                 </div>
             </div>
